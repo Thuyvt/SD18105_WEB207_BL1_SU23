@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--C1: Nhúng file angular js -->
+    <script src="angular.min.js" language="javascript"></script>
+    <!--C2: Nhúng link CDN -->
+    <!-- <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script> -->
+</head>
+<body>
+    <!-- Khai báo ứng dụng angular js trên file html -->
+    <div ng-app="firstApp">
+        <!-- Khai báo nhóm tính năng helloController-->
+        <div ng-controller="helloController">
+            <!-- Họ và tên: 
+            <input type="text" ng-model="name">
+            <label> Xin chào <label ng-bind="name"></label></label> -->
+            <input type="text" ng-model="name">
+            <label> Xin chào </label> {{name}}
+            <p> Năm nay {{age}} </p>
+            <p> Email {{email}} </p>
+            <p><b>THÔNG TIN SINH VIÊN</b></p>
+            <p> {{student.name}} - {{student.age}} - {{student.email}}</p>
+            <!-- Hiển thị mảng bằng index -->
+            <ul>
+                <li>{{arr[0]}}</li>
+                <li>{{arr[1]}}</li>
+                <li>{{arr[2]}}</li>
+            </ul>
+            <!-- NG-REPEAT -->
+            <ul>
+                <li ng-repeat="a in arr"> {{a}}</li>
+            </ul>
+            <!-- bảng sinh viên -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tên</th>
+                        <th>Tuổi</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="st in arrStudent">
+                        <td>{{st.name}}</td>
+                        <td>{{st.age}}</td>
+                        <td>{{st.email}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- Khai báo nhóm tính năng mainController -->
+        <div ng-controller="mainController">
+
+        </div>
+    </div>
+    <!-- ANGULAR JS -->
+    <script>
+        // Khởi tạo ứng dụng firstApp
+        angular.module("firstApp", [])
+        // Khởi tạo nhóm chức năng helloController có trong app
+        .controller("helloController", function($scope){
+            // Biến có kiểu dữ liệu đơn giản
+            $scope.age = 30;
+            $scope.email= 'thuyvt66@fpt.edu.vn';
+            console.log($scope.name + "");
+            // Biến có kiểu dữ liệu dạng đối tượng
+            $scope.student = {
+                name: 'Nguyễn Anh Duy',
+                age: 18,
+                email: 'duynaph12345@fpt.edu.vn'
+            };
+            // Biến có kiểu dữ liệu dạng mảng
+            $scope.arr = ['Trà sữa mochi kéo dài', 'Trà sữa nướng', 'Trà sữa 3Q'];
+            $scope.arrStudent = [
+                {
+                    name: 'Nguyễn Anh Duy',
+                    age: 18,
+                    email: 'duynaph12345@fpt.edu.vn'
+                },
+                {
+                name: 'Nguyễn Anh Duy 1',
+                age: 18,
+                email: 'duynaph12345@fpt.edu.vn'
+                },
+                {
+                name: 'Nguyễn Anh Duy 3',
+                age: 18,
+                email: 'duynaph12345@fpt.edu.vn'
+            }
+            ]
+        })
+        // Khởi tạo nhóm chức năng mainController có trong app
+        .controller("mainController", function($scope){})
+    </script>
+</body>
+</html>

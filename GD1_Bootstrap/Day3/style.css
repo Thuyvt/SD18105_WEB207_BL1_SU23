@@ -1,0 +1,9 @@
+
+@media (max-width: 500px) { 
+    article {
+        color: red;
+    }
+    * {
+        background-color: aqua;
+    }
+}
