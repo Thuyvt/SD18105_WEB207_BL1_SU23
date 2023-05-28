@@ -1,0 +1,45 @@
+<p> GIỚI THIỆU </p>
+<table>
+    <thead>
+        <tr>
+            <th>Mã</th>
+            <th>Tên</th>
+            <th>Lab</th>
+            <th>ASM</th>
+            <th>Tổng kết</th>
+            <th>Trạng thái</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="s in svArray">
+            <td><a href="#lien-he/acc={{s.ma}}">{{s.ma}}</a></td>
+            <td>{{s.ten}}</td>
+            <td>{{s.lab}}</td>
+            <td>{{s.asm}}</td>
+            <td>{{ (s.lab + s.asm) /3 | number : 2}}</td>
+            <td>
+                <!-- <span ng-if="s.trangThai == true" style="color: green">{{s.trangThai}}</span>
+                <span ng-if="s.trangThai == false" style="color: red">{{s.trangThai}}</span> -->
+                <span style="color: {{s.trangThai == true ? 'green' : 'red'}}">{{s.trangThai}}</span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+Thêm sinh viên
+<form>
+    <label>Mã: </label>
+    <input type="text" ng-model="sinhVien.ma">
+    <br/>
+    <label>Tên: </label>
+    <input type="text" ng-model="sinhVien.ten">
+    <br/>
+    <label>Lab: </label>
+    <input type="number" ng-model="sinhVien.lab">
+    <br/>
+    <label>ASM: </label>
+    <input type="number" ng-model="sinhVien.asm">
+    <br/>
+    <button type="submit" ng-click="them()">Thêm</button>
+</form>
+
+<a href="#2/{{tongTien}}"></a>

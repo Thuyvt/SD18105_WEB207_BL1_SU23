@@ -1,0 +1,26 @@
+<p> LIÊN HỆ </p>
+<h2> Đây là thông tin sv {{ma}}</h2>
+
+<!-- Sử dụng được cho ô input -->
+<!-- required: bắt buộc nhập
+     ng-required: boolean 
+     maxlength: giới hạn ký tự 
+     ng-maxlength: number
+     ng-minlength: number
+     ng-pattern: string    
+     ng-change: function
+     ng-trim: boolean
+    -->
+    <!-- $dirty: đã được tương tác
+        $invalid: không hợp lệ
+        $error: lỗi
+     -->
+<form name="svForm">
+    Tên: <input type="text" name="ten" ng-model="ten" required ng-maxlength="50"> <br>
+    <span ng-show="svForm.ten.$dirty && svForm.ten.$error.required" 
+    style="color:red"> Bắt buộc nhập tên </span>
+    <span ng-show="svForm.ten.$dirty && svForm.ten.$error.maxlength"
+    style="color:red">Tên không quá 50 ký tự </span>
+    Email: <input type="email" name="email" ng-model="email"><br>
+    <button type="submit">Submit</button>
+</form>
