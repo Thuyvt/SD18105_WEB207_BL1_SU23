@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-app="JsonServerDemo">
+    <table ng-controller="accountController">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Tên</th>
+                <th>Email</th>
+                <th>Password</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="acc in lstAccount">
+                <td>{{acc.id}}</td>
+                <td>{{acc.name}}</td>
+                <td>{{acc.email}}</td>
+                <td>{{acc.password}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Nhúng angular -->
+    <script src="../../lib/angular.js"></script>
+    <!-- Nhúng file js -->
+    <script src="index.js"></script>
+</body>
+</html>
