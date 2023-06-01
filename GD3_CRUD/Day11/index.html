@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-app="JsonServerDemo">
+    <div ng-controller="accountController">
+        Thông tin tài khoản
+        <form ng-submit="onSubmit($event)">
+            <label>Id: </label>
+            <input type="number" ng-model="acc.id"/> <br>
+            <label>Tên: </label>
+            <input type="text" ng-model="acc.name"/> <br>
+            <label>Email: </label>
+            <input type="email" ng-model="acc.email"/><br>
+            <label>Password: </label>
+            <input type="text" ng-model="acc.password"/><br>
+            <button type="submit">Thêm</button>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Tên</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="acc in lstAccount">
+                    <td>{{acc.id}}</td>
+                    <td>{{acc.name}}</td>
+                    <td>{{acc.email}}</td>
+                    <td>{{acc.password}}</td>
+                    <td>
+                        <button ng-click="select($index)">Sửa</button>
+                        <button ng-click="delete($index)">Xóa</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+
+    <!-- Nhúng angular -->
+    <script src="../../lib/angular.js"></script>
+    <!-- Nhúng file js -->
+    <script src="index.js"></script>
+</body>
+</html>

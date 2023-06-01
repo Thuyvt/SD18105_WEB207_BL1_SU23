@@ -8,6 +8,7 @@ myApp.controller("accountController", function ($scope, $http) {
     $http.get(apiAccountUrl)
     .then(function (response) { // sẽ chạy vào nếu api trả về dữ liệu
         // lấy data từ response trả về
+        console.log(response);
         $scope.lstAccount = response.data;
     })
     .catch(function (error) {
