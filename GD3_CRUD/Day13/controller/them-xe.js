@@ -1,0 +1,1 @@
+function ThemXeController ($http, $scope) {}

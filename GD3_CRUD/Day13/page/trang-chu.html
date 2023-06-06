@@ -1,0 +1,28 @@
+<h2> Danh sách xe</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Tên</th>
+            <th>Loại</th>
+            <th>Hãng</th>
+            <th>Giá</th>
+            <th>Hành động</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="xe in lstXe">
+            <td> {{xe.id}}</td>
+            <td>{{xe.ten}}</td>
+            <td>{{xe.loai}}</td>
+            <td>{{xe.hang}}</td>
+            <td>{{xe.gia}}</td>
+            <td>
+                <button> <a href="#xes/delete/{{xe.id}}"> Xóa</a></button>
+                <button> <a href="#xes/edit/{{xe.id}}"> Sửa</a></button>
+
+            </td>
+        </tr>
+    </tbody>
+</table>

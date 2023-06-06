@@ -1,0 +1,18 @@
+{
+  "xes": [
+    {
+      "id": 1,
+      "ten": "json-server",
+      "loai": "Xe máy",
+      "hang": "Honda",
+      "gia": 12345
+    },
+    {
+      "id": 2,
+      "ten": "json-server",
+      "loai": "Xe ô tô",
+      "hang": "Honda",
+      "gia": 12345
+    }
+  ]
+}

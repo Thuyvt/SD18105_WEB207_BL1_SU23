@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-app="appXe">
+    <div ng-include="'layout/header.html'"></div>
+    <div ng-view></div>
+    <div ng-include="'layout/footer.html'"></div>
+
+    <!-- Khai báo thư viện -->
+    <script src="../../lib/angular.js"></script>
+    <script src="../../lib/angular-route.js"></script>
+    <script src="controller/sua-xe.js"></script>
+    <script src="controller/them-xe.js"></script>
+    <script src="controller/trang-chu.js"></script>
+    <script src="controller/xoa-xe.js"></script>
+    <script src="route.js"></script>
+</body>
+</html>
